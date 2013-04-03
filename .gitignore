@@ -1,3 +1,4 @@
 config/aws_glacier.yml
 .idea
 *.7z
+*.jpg
