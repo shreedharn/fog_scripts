@@ -15,3 +15,12 @@ For aws\_glacier.rb following configuration information is required in the aws\_
 AWS_ACCESS_KEY_ID &nbsp; : &nbsp; [] &nbsp; &#35; mention your access id without square brackets
 <br>
 AWS_SECRET_ACCESS_KEY &nbsp; : &nbsp; [] &nbsp; &#35; mention your secret access key without square brackets
+
+<p>
+<b>aws_s3.rb:</b>
+<br>
+Use aws-sdk to upload a image file to a S3 bucket. The script uses bucket's lifecycle configuration to provide the Object
+expiration date.
+<br>
+aws configuration information is provided in the aws_glacier.yml
+</p>
