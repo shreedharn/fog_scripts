@@ -1,10 +1,8 @@
-require 'rubygems' # for ruby 1.8 compatibility
-
-gem 'fog' # http://fog.io
 require 'fog'
 
 #Configuration YAML files are available in the config directory
 #while testing script folder was set as working folder
+VAULT_NAME = 'albums'
 curr_path = File.expand_path(File.dirname(__FILE__))
 config_yaml_path = File.expand_path('../config',curr_path)
 
@@ -21,17 +19,17 @@ aws_vault = nil
 vaults = glacier.vaults.all
 
 vaults.each { |vault_itr|
-                if (vault_itr.id.eql? 'albums' )
+                if (vault_itr.id.eql? VAULT_NAME )
                   aws_vault = vault_itr
                 end
-                break if (!aws_vault.nil?)
+                break if aws_vault
             }
 
+
 #while testing, was storing an archive of albums in 7z format
-if (aws_vault.nil?)
-  aws_vault = glacier.vaults.create :id => 'albums'
-end
-# print aws_vault.to_yaml
+aws_vault = glacier.vaults.create(:id => VAULT_NAME) unless aws_vault
+
+#print aws_vault.to_yaml
 
 
 #Need to improve validation here. At this point expects the archive name as the first argument.

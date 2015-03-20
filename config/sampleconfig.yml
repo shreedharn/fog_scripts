@@ -1,4 +1,6 @@
 #this is a sample file.
-# Refer Readme.md for more details
-AWS_ACCESS_KEY_ID : []
-AWS_SECRET_ACCESS_KEY : []
+AWS_ACCESS_KEY_ID   :   Replace_with_a_valid_access_key_id
+AWS_SECRET_ACCESS_KEY   :   Replace_with_a_valid_secret
+#archive id can be retrieved using the vault inventory retrieval job
+ARCHIVE_ID : 	Replace_with_a_archive_id_that_needs_to_be_deleted
+
