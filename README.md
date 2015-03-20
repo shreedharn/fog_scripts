@@ -1,26 +1,29 @@
 The Repository contains a set of ruby sample scripts for accessing various Amazon Web Services (aws)
 <p>
-<b>aws_glacier.rb:</b>
-<br>
-Makes a connection to Vault and uploads a file to the cloud. Provide the file name as
-a first argument to the script.
-</p>
-
-You have to create a configuration file in the config directory with required aws configuration information.
-For aws\_glacier.rb following configuration information is required in the aws\_glacier.yml
-<br>
-<br>
-&#35; config/aws_glacier.yml
-<br>
-AWS_ACCESS_KEY_ID &nbsp; : &nbsp; [] &nbsp; &#35; mention your access id without square brackets
-<br>
-AWS_SECRET_ACCESS_KEY &nbsp; : &nbsp; [] &nbsp; &#35; mention your secret access key without square brackets
-
-<p>
 <b>aws_s3.rb:</b>
 <br>
-Use aws-sdk to upload a image file to a S3 bucket. The script uses bucket's lifecycle configuration to provide the Object
+Uses aws-sdk to upload a image file to a S3 bucket. The script uses bucket's lifecycle configuration to provide the Object
 expiration date.
+</p>
+
+<p>
+<b>glacier_fogio.rb</b>
 <br>
-aws configuration information is provided in the aws_glacier.yml
+Uses fog gem to upload a file as an archive to a AWS Glacier Vault. Provide the file name as
+a first argument to the script. Script expects archive name as its first argument
+</p>
+
+<p>
+<b>glacier_aws_sdk.rb</b>
+<br>
+Uses aws sdk to delete an archive from AWS Glacier Vault. Provide the file name as
+a first argument to the script. Script expects archive name as its first argument
+</p>
+
+<p>
+<b>aws_glacier.yml</b>
+<br>
+aws_glacier.yml is a required configuration files to use the above scripts.
+<br>
+Copy sampleconfig.yml as aws_glacier.yml in the config directory and replace with valid values. For using the scripts, the IAM user should have AmazonS3FullAccess and AmazonGlacierFullAccess policy.
 </p>
